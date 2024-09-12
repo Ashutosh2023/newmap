@@ -48,7 +48,6 @@
 </head>
 
 <body>
-    <p>hjjhk</p>
     <div id="mapElement" style="display: inline-block;">
         <svg height="90vh" version="1.1" width="100vw" xmlns="http://www.w3.org/2000/svg"
         style="overflow: hidden; position: relative; left: -0.100006px; top: -0.599998px;"
@@ -1424,6 +1423,9 @@
 
     <script>
         const tooltip = document.getElementById('tooltip');
+        let tooltipWidth = tooltip.offsetWidth;
+        let tooltipHeight = tooltip.offsetHeight;
+
         const hoverelement0 = document.querySelector('.sm_location_0'); 
         hoverelement0.addEventListener('mouseover', (event) => {
             tooltip.innerHTML = "<b class='locationHeading'>Chennai, India</b><br><br><b>Address:</b>2A, Jeyamkonar, New no. 40 (Old no. 12), Murrays Gate Road, Alwarpet, Chennai, Tamilnadu,<br>Pin - 600018, India";
@@ -1433,7 +1435,7 @@
             hoverelement0.style.fill = '#ffbc3b';
         });
         hoverelement0.addEventListener('mousemove', (event) => {
-            tooltip.style.left = `${event.pageX + 10}px`;
+            tooltip.style.left = `${event.pageX - tooltipWidth}px`;
             tooltip.style.top = `${event.pageY + 10}px`;
         });
         hoverelement0.addEventListener('mouseout', () => {
@@ -1450,7 +1452,7 @@
             hoverelement1.style.fill = '#ffbc3b';
         });
         hoverelement1.addEventListener('mousemove', (event) => {
-            tooltip.style.left = `${event.pageX + 10}px`;
+            tooltip.style.left = `${event.pageX - tooltipWidth}px`;
             tooltip.style.top = `${event.pageY + 10}px`;
         });
         hoverelement1.addEventListener('mouseout', () => {
@@ -1511,21 +1513,20 @@
 
         const hoverelement5 = document.querySelector('.sm_location_5'); 
         hoverelement5.addEventListener('mouseover', (event) => {
-            tooltip.innerHTML = "<b class='locationHeading'>Dhaka, Bangladesh</b><br><br><b>Address:</b>Suit-11/B, Al Amin Millennium Tower,<br>75/76 Kakrail,Dhaka-1000, Bangladesh";
+            tooltip.innerHTML = "<b class='locationHeading'>Dhaka, bBangladesh</b><br><br><b>Address:</b>Suit-11/B, Al Amin Millennium Tower,<br>75/76 Kakrail,Dhaka-1000, Bangladesh";
             tooltip.style.opacity = '1';
-            tooltip.style.left = `${event.pageX + 10}px`;
+            tooltip.style.left = `${event.pageX}px`;
             tooltip.style.top = `${event.pageY + 10}px`;
             hoverelement5.style.fill = '#ffbc3b';
         });
         hoverelement5.addEventListener('mousemove', (event) => {
-            tooltip.style.left = `${event.pageX + 10}px`;
+            tooltip.style.left = `${event.pageX - tooltipWidth}px`;
             tooltip.style.top = `${event.pageY + 10}px`;
         });
         hoverelement5.addEventListener('mouseout', () => {
             tooltip.style.opacity = '0';
             hoverelement5.style.fill = '';
         });
-
         
 
         const pathElement0 = document.querySelector('.sm_location_0'); //Chennai
