@@ -1423,19 +1423,20 @@
 
     <script>
         const tooltip = document.getElementById('tooltip');
-        let tooltipWidth = tooltip.offsetWidth;
-        let tooltipHeight = tooltip.offsetHeight;
+        // let tooltipWidth = tooltip.offsetWidth;
+        // let tooltipHeight = tooltip.offsetHeight;
 
         const hoverelement0 = document.querySelector('.sm_location_0'); 
         hoverelement0.addEventListener('mouseover', (event) => {
-            tooltip.innerHTML = "<b class='locationHeading'>Chennai, India</b><br><br><b>Address:</b>2A, Jeyamkonar, New no. 40 (Old no. 12), Murrays Gate Road, Alwarpet, Chennai, Tamilnadu, Pin - 600018, India";
+            tooltip.innerHTML = "<b class='locationHeading'>cChennai, India</b><br><br><b>Address:</b>2A, Jeyamkonar, New no. 40 (Old no. 12), Murrays Gate Road, Alwarpet, Chennai, Tamilnadu, Pin - 600018, India";
             tooltip.style.opacity = '1';
             tooltip.style.left = `${event.pageX + 10}px`;
             tooltip.style.top = `${event.pageY + 10}px`;
             hoverelement0.style.fill = '#ffbc3b';
         });
         hoverelement0.addEventListener('mousemove', (event) => {
-            tooltip.style.left = `${event.pageX - tooltipWidth}px`;
+            const tooltipWidth0 = tooltip.offsetWidth;
+            tooltip.style.left = `${event.pageX - tooltipWidth0}px`;
             tooltip.style.top = `${event.pageY + 10}px`;
         });
         hoverelement0.addEventListener('mouseout', () => {
@@ -1452,7 +1453,8 @@
             hoverelement1.style.fill = '#ffbc3b';
         });
         hoverelement1.addEventListener('mousemove', (event) => {
-            tooltip.style.left = `${event.pageX - tooltipWidth}px`;
+            const tooltipWidth1 = tooltip.offsetWidth;
+            tooltip.style.left = `${event.pageX - tooltipWidth1}px`;
             tooltip.style.top = `${event.pageY + 10}px`;
         });
         hoverelement1.addEventListener('mouseout', () => {
@@ -1520,7 +1522,8 @@
             hoverelement5.style.fill = '#ffbc3b';
         });
         hoverelement5.addEventListener('mousemove', (event) => {
-            tooltip.style.left = `${event.pageX - tooltipWidth}px`;
+            const tooltipWidth5 = tooltip.offsetWidth;
+            tooltip.style.left = `${event.pageX - tooltipWidth5}px`;
             tooltip.style.top = `${event.pageY + 10}px`;
         });
         hoverelement5.addEventListener('mouseout', () => {
